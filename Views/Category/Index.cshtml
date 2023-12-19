@@ -1,0 +1,47 @@
+﻿@model List<Category>
+
+ <div class="container">
+     <div class="row pt-4 pb-3">
+         <div class="col-1">
+             <h2 class="text-bg-danger">
+                 LIST
+             </h2>
+         </div>
+         <div class="col-lg-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="26" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5z" />
+                </svg> Banao
+
+            </a>
+         </div>
+     </div>
+
+    @* <div class="row pt-4">
+        <div class="col-6">
+               
+        </div>
+    </div> *@
+ </div>
+<table class="table table-bordered table-striped bg-white" style="background-color:wheat">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Display</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.Name </td>
+                    <td>@obj.DisplayOrder </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
